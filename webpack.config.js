@@ -18,18 +18,16 @@ const config = {
             test: /\.vue$/,
             loader: 'vue-loader'
         }, {
-            test: /\.jxs$/,
+            test: /\.jsx$/,
             loader: 'babel-loader'
         }, {
-            test: /\.styl$/,
+            test: /\.styl/,
             use: [
-                'style-loader',
+                'vue-style-loader',
                 'css-loader',
                 {
                     loader: 'postcss-loader',
-                    options: {
-                        sourceMap: true
-                    }
+                    options: { sourceMap: true }
                 },
                 'stylus-loader'
             ]
@@ -38,7 +36,7 @@ const config = {
             test: /\.css$/,
             // loader: 'css-loader'
             use: [
-                'style-loader', 'css-loader'
+                'style-loader', 'css-loader','postcss-loader'
             ]
         }, {
             test: /\.(gif|jpg|jpeg|png|svg)$/,
